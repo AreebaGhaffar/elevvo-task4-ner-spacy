@@ -1,6 +1,7 @@
 {
   "slice": {
     "split": "test",
+    "start": 0,
     "n_sentences": 500,
     "gold_entities": 983
   },

@@ -50,17 +50,23 @@ def gazetteer_patterns():
 
 
 def structural_patterns():
-    """Title + organisation-suffix token patterns."""
+    """Title + organisation-suffix token patterns.
+
+    Note: spaCy keeps the period on abbreviations ("Mr.", "Corp."), so both
+    the dotted and plain forms are matched.
+    """
     patterns = []
     for title in TITLES:
         patterns.append({
             "label": "PER",
-            "pattern": [{"LOWER": title}, {"IS_TITLE": True, "OP": "+"}],
+            "pattern": [{"LOWER": {"IN": [title, title + "."]}},
+                        {"IS_TITLE": True, "OP": "+"}],
         })
     for suffix in ORG_SUFFIXES:
         patterns.append({
             "label": "ORG",
-            "pattern": [{"IS_TITLE": True, "OP": "+"}, {"LOWER": suffix}],
+            "pattern": [{"IS_TITLE": True, "OP": "+"},
+                        {"LOWER": {"IN": [suffix, suffix + "."]}}],
         })
     return patterns
 
