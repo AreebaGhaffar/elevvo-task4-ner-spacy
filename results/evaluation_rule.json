@@ -1,0 +1,53 @@
+{
+  "slice": {
+    "split": "test",
+    "n_sentences": 500,
+    "gold_entities": 983
+  },
+  "reports": {
+    "rule": {
+      "LOC": {
+        "precision": 0.8109090909090909,
+        "recall": 0.7743055555555556,
+        "f1-score": 0.7921847246891652,
+        "support": 288
+      },
+      "MISC": {
+        "precision": 0.56,
+        "recall": 0.4307692307692308,
+        "f1-score": 0.4869565217391305,
+        "support": 65
+      },
+      "ORG": {
+        "precision": 0.4897959183673469,
+        "recall": 0.1276595744680851,
+        "f1-score": 0.20253164556962025,
+        "support": 188
+      },
+      "PER": {
+        "precision": 0.41935483870967744,
+        "recall": 0.058823529411764705,
+        "f1-score": 0.10317460317460317,
+        "support": 442
+      },
+      "micro avg": {
+        "precision": 0.6903669724770642,
+        "recall": 0.306205493387589,
+        "f1-score": 0.4242424242424242,
+        "support": 983
+      },
+      "macro avg": {
+        "precision": 0.5700149619965289,
+        "recall": 0.34788947255115904,
+        "f1-score": 0.3962118737931298,
+        "support": 983
+      },
+      "weighted avg": {
+        "precision": 0.5568446485702511,
+        "recall": 0.306205493387589,
+        "f1-score": 0.34942064963762587,
+        "support": 983
+      }
+    }
+  }
+}
