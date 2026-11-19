@@ -70,11 +70,11 @@ def spans_to_tags(spans, n_tokens):
     return tags
 
 
-def load_split(split, n_sentences=None):
-    """Load a split ('train', 'validation', 'test'); optionally take the
-    first n_sentences (the fixed evaluation slice)."""
+def load_split(split, n_sentences=None, start=0):
+    """Load a split ('train', 'validation', 'test'); optionally take
+    n_sentences starting at sentence index `start` (the fixed slice)."""
     fname = {"train": "eng.train", "validation": "eng.testa", "test": "eng.testb"}[split]
     sentences = read_conll(DATA / fname)
     if n_sentences is not None:
-        sentences = sentences[:n_sentences]
+        sentences = sentences[start:start + n_sentences]
     return sentences

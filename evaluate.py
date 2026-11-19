@@ -68,14 +68,17 @@ def main():
     parser.add_argument("--approach", default="sm",
                         choices=list(APPROACHES) + ["all"])
     parser.add_argument("--n", type=int, default=500,
-                        help="fixed evaluation slice: first N test sentences")
+                        help="fixed evaluation slice: N test sentences")
+    parser.add_argument("--start", type=int, default=0,
+                        help="first sentence index of the slice (default 0)")
     parser.add_argument("--split", default="test")
     args = parser.parse_args()
 
-    sentences = load_split(args.split, args.n)
+    sentences = load_split(args.split, args.n, args.start)
     n_entities = sum(1 for _, tags in sentences for t in tags if t.startswith("B-"))
-    print(f"Evaluation slice: first {args.n} sentences of CoNLL-2003 "
-          f"{args.split} ({n_entities} gold entities)")
+    print(f"Evaluation slice: sentences {args.start}-{args.start + args.n - 1} "
+          f"of CoNLL-2003 {args.split} ({args.n} sentences, "
+          f"{n_entities} gold entities)")
 
     names = list(APPROACHES) if args.approach == "all" else [args.approach]
     all_reports = {}
@@ -86,11 +89,12 @@ def main():
         all_reports[key] = report
         print(classification_report(gold_tags, pred_tags, zero_division=0))
 
-    out = RESULTS / f"evaluation_{args.approach}.json"
+    out = RESULTS / (f"evaluation_{args.approach}_slice{args.start}-{args.start + args.n}.json"
+                     if args.start else f"evaluation_{args.approach}.json")
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(to_native({
-        "slice": {"split": args.split, "n_sentences": args.n,
-                  "gold_entities": n_entities},
+        "slice": {"split": args.split, "start": args.start,
+                  "n_sentences": args.n, "gold_entities": n_entities},
         "reports": all_reports,
     }), indent=2))
     print(f"\nWrote {out}")
