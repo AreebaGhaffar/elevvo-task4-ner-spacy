@@ -1,0 +1,50 @@
+{
+  "n_train_sentences": 1500,
+  "epochs": 10,
+  "dropout": 0.2,
+  "seed": 42,
+  "losses_per_epoch": [
+    {
+      "tok2vec": 0.0,
+      "ner": 3689.08
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 1769.8
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 1166.34
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 877.37
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 649.64
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 449.08
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 411.45
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 370.87
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 329.82
+    },
+    {
+      "tok2vec": 0.0,
+      "ner": 350.0
+    }
+  ],
+  "model_dir": "models/ner_demo",
+  "note": "Losses transcribed from train_demo.log of the actual run; the JSON write in train_demo.py failed on numpy float32 and was fixed (float() cast) after the run."
+}

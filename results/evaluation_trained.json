@@ -1,0 +1,53 @@
+{
+  "slice": {
+    "split": "test",
+    "n_sentences": 500,
+    "gold_entities": 983
+  },
+  "reports": {
+    "trained": {
+      "LOC": {
+        "precision": 0.7960526315789473,
+        "recall": 0.8402777777777778,
+        "f1-score": 0.8175675675675677,
+        "support": 288
+      },
+      "MISC": {
+        "precision": 0.43478260869565216,
+        "recall": 0.7692307692307693,
+        "f1-score": 0.5555555555555555,
+        "support": 65
+      },
+      "ORG": {
+        "precision": 0.5869565217391305,
+        "recall": 0.4308510638297872,
+        "f1-score": 0.4969325153374233,
+        "support": 188
+      },
+      "PER": {
+        "precision": 0.8664921465968587,
+        "recall": 0.748868778280543,
+        "f1-score": 0.8033980582524272,
+        "support": 442
+      },
+      "micro avg": {
+        "precision": 0.7497337593184239,
+        "recall": 0.71617497456765,
+        "f1-score": 0.7325702393340271,
+        "support": 983
+      },
+      "macro avg": {
+        "precision": 0.6710709771526472,
+        "recall": 0.6973070972797193,
+        "f1-score": 0.6683634241782435,
+        "support": 983
+      },
+      "weighted avg": {
+        "precision": 0.7638467775612638,
+        "recall": 0.71617497456765,
+        "f1-score": 0.7325491609375167,
+        "support": 983
+      }
+    }
+  }
+}
