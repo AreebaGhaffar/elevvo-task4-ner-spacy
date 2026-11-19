@@ -1,0 +1,53 @@
+{
+  "slice": {
+    "split": "test",
+    "n_sentences": 500,
+    "gold_entities": 983
+  },
+  "reports": {
+    "sm": {
+      "LOC": {
+        "precision": 0.7640449438202247,
+        "recall": 0.7083333333333334,
+        "f1-score": 0.7351351351351351,
+        "support": 288
+      },
+      "MISC": {
+        "precision": 0.37681159420289856,
+        "recall": 0.4,
+        "f1-score": 0.3880597014925373,
+        "support": 65
+      },
+      "ORG": {
+        "precision": 0.28484848484848485,
+        "recall": 0.25,
+        "f1-score": 0.26628895184135976,
+        "support": 188
+      },
+      "PER": {
+        "precision": 0.8274760383386581,
+        "recall": 0.5859728506787331,
+        "f1-score": 0.6860927152317882,
+        "support": 442
+      },
+      "micro avg": {
+        "precision": 0.6584766584766585,
+        "recall": 0.5452695829094608,
+        "f1-score": 0.5965498052309405,
+        "support": 983
+      },
+      "macro avg": {
+        "precision": 0.5632952653025666,
+        "recall": 0.48607654600301664,
+        "f1-score": 0.5188941259252051,
+        "support": 983
+      },
+      "weighted avg": {
+        "precision": 0.6753139588409106,
+        "recall": 0.5452695829094608,
+        "f1-score": 0.6004660250198982,
+        "support": 983
+      }
+    }
+  }
+}
