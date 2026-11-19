@@ -1,0 +1,9 @@
+# raw data and downloaded models (re-download with download_data.py / download_models.py)
+data/
+models/
+__pycache__/
+*.pyc
+.venv/
+*.log
+.streamlit/
+outputs/*.html
